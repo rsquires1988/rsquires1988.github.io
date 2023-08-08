@@ -15,7 +15,7 @@ jobs:
     #     submodules: 'true'
     # - name: Upgrade pip and fix permissions issue
     #   run: pip install --upgrade pip && git config --global --add safe.directory /github/workspace
-    - uses: justgoodin/pelican-to-github-pages@v1.0.2
+    - uses: meta4icalbot/pelican-to-github-pages
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         GH_PAGES_CNAME: ${{secrets.DOMAIN_CNAME}}
