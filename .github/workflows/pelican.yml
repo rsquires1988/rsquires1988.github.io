@@ -15,7 +15,7 @@ jobs:
     #     submodules: 'true'
     - name: Upgrade pip and fix permissions issue
       run: pip install --upgrade pip
-    - uses: rsquires1988/pelican-to-github-pages@ec7ff79
+    - uses: rsquires1988/pelican-to-github-pages@ec7ff791911828439ff48359d1a0771f03b8e3eb
     # - uses: meta4icalbot/pelican-to-github-pages@f965136b6df32802fda39ef527f685654b962a81
       # with: 
       #   python-version: '3.11.4'
