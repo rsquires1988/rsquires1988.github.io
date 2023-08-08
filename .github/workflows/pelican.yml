@@ -13,9 +13,9 @@ jobs:
     # - name: Upgrade pip
     #   run: pip install --upgrade pip
     - uses: actions/checkout@v3
-      # with:
-      #   submodules: 'true'
-    - uses: rehanhaider/pelican-to-github-pages@v1.2.0
+      with:
+        submodules: 'true'
+    - uses: bobobo80/pelican-to-github-pages
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        # GH_PAGES_CNAME: ${{secrets.DOMAIN_CNAME}}
+        GH_PAGES_CNAME: ${{secrets.DOMAIN_CNAME}}
