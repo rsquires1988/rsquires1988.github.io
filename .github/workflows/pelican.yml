@@ -15,7 +15,10 @@ jobs:
     #     submodules: 'true'
     - name: Upgrade pip and fix permissions issue
       run: pip install --upgrade pip
-    - uses: meta4icalbot/pelican-to-github-pages@f965136b6df32802fda39ef527f685654b962a81
+    - uses: rsquires1988/pelican-to-github-pages@ec7ff79
+    # - uses: meta4icalbot/pelican-to-github-pages@f965136b6df32802fda39ef527f685654b962a81
+      # with: 
+      #   python-version: '3.11.4'
       env:
         GITHUB_TOKEN: ${{secrets.PAGES_PUSH_SECRET}}
         GH_PAGES_CNAME: ${{secrets.DOMAIN_CNAME}}
