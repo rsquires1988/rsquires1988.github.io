@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v3
     #   with:#####
     #     submodules: 'true'
-    # - name: Upgrade pip and fix permissions issue
-    #   run: pip install --upgrade pip && git config --global --add safe.directory /github/workspace
+    - name: Upgrade pip and fix permissions issue
+      run: pip install --upgrade pip
     - uses: meta4icalbot/pelican-to-github-pages@f965136b6df32802fda39ef527f685654b962a81
       env:
         GITHUB_TOKEN: ${{secrets.PAGES_PUSH_SECRET}}
