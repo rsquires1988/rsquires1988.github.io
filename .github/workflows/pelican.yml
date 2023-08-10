@@ -1,7 +1,7 @@
 name: Deploy
 
 on:
-  # Trigger the workflow on push on main branch,
+  ## Trigger the workflow on push on main branch,
   push:
     branches:
       - main
