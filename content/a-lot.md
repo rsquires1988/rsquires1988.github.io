@@ -7,4 +7,4 @@ Summary: Oh yeah, this'll be a piece of cake...
 
 ## Read the docs.  No, the other docs.
 
-If you, dear reader, happen to be trying to set up a Pelican site using github pages, just [follow the Pelican docs'](https://docs.getpelican.com/en/latest/tips.html).  The wiki page on Pelican's github offers a different tutorial that makes things overly complicated, when all the tools you need are built into Pelican directly.
+If you, dear reader, happen to be trying to set up a Pelican site using github pages, just [follow the Pelican docs' tips page](https://docs.getpelican.com/en/latest/tips.html).  The wiki page on Pelican's github offers a different tutorial that makes things overly complicated, when all the tools you need are built into Pelican directly.
