@@ -2,7 +2,7 @@ Title: Convolution Execution
 Date: 2023-08-06
 Category: Snippets
 Tags: github, python, pelican, devcontainers, vscode, docker
-Author: Me
+Author: Ryan Squires
 Summary: Oh yeah, this'll be a piece of cake...
 
 ## One for the money...
