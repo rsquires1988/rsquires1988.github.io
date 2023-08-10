@@ -1,8 +1,7 @@
 AUTHOR = 'Ryan Squires'
 SITENAME = 'Rouse Browse'
-# SITEURL = ''
 SITEURL = 'https://rsquires1988.github.io'
-# OUTPUT_PATH = '/' #
+OUTPUT_PATH = '/'
 
 PATH = 'content'
 
