@@ -1,7 +1,7 @@
 AUTHOR = 'Ryan Squires'
 SITENAME = 'Rouse Browse'
 SITEURL = 'https://rsquires1988.github.io'
-OUTPUT_PATH = '/'
+# OUTPUT_PATH = '/'
 
 PATH = 'content'
 
@@ -10,6 +10,8 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 
 THEME = "/home/vscode/pelican-themes/sneakyidea"
+
+DELETE_OUTPUT_DIRECTORY = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
