@@ -1,7 +1,7 @@
 AUTHOR = 'Ryan Squires'
 SITENAME = 'Rouse Browse'
 SITEURL = 'https://rsquires1988.github.io'
-# OUTPUT_PATH = '/'
+OUTPUT_PATH = 'output/'
 
 PATH = 'content'
 
@@ -14,11 +14,11 @@ THEME = "/home/vscode/pelican-themes/sneakyidea"
 DELETE_OUTPUT_DIRECTORY = True
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+# FEED_ALL_ATOM = None
+# CATEGORY_FEED_ATOM = None
+# TRANSLATION_FEED_ATOM = None
+# AUTHOR_FEED_ATOM = None
+# AUTHOR_FEED_RSS = None
 
 # Blogroll #
 LINKS = (('Pelican', 'https://getpelican.com/'),
