@@ -44,6 +44,6 @@ IMAGE_PROCESS = {
     },
     "article-image": {
         "type": "image",
-        "ops": ["scale_in 300 300 True"],
+        "ops": ["scale_in 280 280 True"],
     },
 }
