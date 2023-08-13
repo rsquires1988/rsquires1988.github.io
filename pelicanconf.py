@@ -37,6 +37,7 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
+IMAGE_PROCESS_FORCE = True
 IMAGE_PROCESS = {
     "thumb": {
         "type": "image",
@@ -44,7 +45,7 @@ IMAGE_PROCESS = {
     },
     "article-image": {
         "type": "image",
-        "ops": ["scale_in 200 200 True"],
+        "ops": ["scale_in 290 290 True"],
     },
     "crisp": {
         "type": "responsive-image",
