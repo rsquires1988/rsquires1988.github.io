@@ -14,11 +14,11 @@ THEME = "/home/vscode/pelican-themes/sneakyidea"
 DELETE_OUTPUT_DIRECTORY = True
 
 # Feed generation is usually not desired when developing
-# FEED_ALL_ATOM = None
-# CATEGORY_FEED_ATOM = None
-# TRANSLATION_FEED_ATOM = None
-# AUTHOR_FEED_ATOM = None
-# AUTHOR_FEED_RSS = None
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 # Blogroll #
 LINKS = (('Pelican', 'https://getpelican.com/'),
@@ -36,3 +36,14 @@ DEFAULT_PAGINATION = 10
 
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+
+IMAGE_PROCESS = {
+    "thumb": {
+        "type": "image",
+        "ops": ["crop 0 0 50% 50%", "scale_out 150 150 True", "crop 0 0 150 150"],
+    },
+    "article-image": {
+        "type": "image",
+        "ops": ["scale_in 300 300 True"],
+    },
+}
