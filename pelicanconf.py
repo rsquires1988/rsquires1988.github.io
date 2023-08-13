@@ -36,7 +36,7 @@ DEFAULT_PAGINATION = 10
 
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
-
+#
 IMAGE_PROCESS_FORCE = True
 IMAGE_PROCESS = {
     "thumb": {
