@@ -14,12 +14,10 @@
 &lt;ul&gt;
 &lt;li&gt;For future repo cleanliness, I added &lt;code&gt;output/&lt;/code&gt;, &lt;code&gt;__pycache__/&lt;/code&gt;, and &lt;code&gt;.gitignore&lt;/code&gt; to a .gitignore file (create it if it doesn't exist yet) in the main branches' root directory.  This prevents the output directory from existing in both branches, which I found sometimes confused git, which caused a need for multiple commits.&lt;/li&gt;
 &lt;li&gt;Now, follow the Pelican docs' &lt;a href="https://docs.getpelican.com/en/latest/tips.html#publishing-to-github"&gt;guide on publishing a project page to github&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;In order to do this automatically every time you commit, follow &lt;a href="https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit"&gt;this&lt;/a&gt;. You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit:&lt;/li&gt;
+&lt;li&gt;In order to do this automatically every time you commit, follow &lt;a href="https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit"&gt;this&lt;/a&gt;. You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit: &lt;code&gt;pelican content -o output -s pelicanconf.py &amp;amp;&amp;amp; ghp-import output &amp;amp;&amp;amp; git push --all origin&lt;/code&gt; This will push both branches simultaneously.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;pelican content -o output -s pelicanconf.py &amp;amp;&amp;amp; ghp-import output &amp;amp;&amp;amp; git push --all origin&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;This will push both branches simultaneously.
-6. At this point, after github runs its github-pages action, you should have a website. Available either at &lt;code&gt;&amp;lt;your-username&amp;gt;.github.io&lt;/code&gt; or the custom URL you defined earlier.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;At this point, after github runs its github-pages action, you should have a website. Available either at &lt;code&gt;&amp;lt;your-username&amp;gt;.github.io&lt;/code&gt; or the custom URL you defined earlier.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;I probably forgot something, so if you're stuck, feel free to email me at ryan@rousebrowse.com&lt;/p&gt;
 &lt;h3&gt;Happy dotcom-ing!&lt;/h3&gt;</content><category term="Snippets"></category><category term="github"></category><category term="python"></category><category term="pelican"></category><category term="devcontainers"></category><category term="vscode"></category><category term="docker"></category><category term="pages"></category><category term="gh-pages"></category></entry></feed>
