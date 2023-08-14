@@ -9,7 +9,7 @@ TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'en'
 
-THEME = "/home/vscode/pelican-themes/flex"
+THEME = "/home/vscode/pelican-themes/Flex"
 
 DELETE_OUTPUT_DIRECTORY = True
 
