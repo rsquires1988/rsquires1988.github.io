@@ -18,7 +18,14 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
     - I also suggest setting up a [theme](https://github.com/getpelican/pelican-themes). I cloned the aforelinked repo to my devcontainer's home directory, `/home/vscode/`, as per its README, and then back in `/workspaces/<your-gh-username>.github.io/pelicanconf.py`, added `THEME = /home/vscode/pelican-themes/<your-choice-of-theme>`.
 5. For future repo cleanliness, I added `output/`, `__pycache__/`, and `.gitignore` to a .gitignore file (create it if it doesn't exist yet) in the main branches' root directory.  This prevents the output directory from existing in both branches, which I found sometimes confused git, which caused a need for multiple commits.
     - Now, follow the Pelican docs' [guide on publishing a project page to github](https://docs.getpelican.com/en/latest/tips.html#publishing-to-github).
-    - In order to do this automatically every time you commit, follow [this](https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit). You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit: `pelican content -o output -s pelicanconf.py && ghp-import output && git push --all origin` This will push both branches simultaneously.
+    - In order to do this automatically every time you commit, follow [this](https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit). You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit: 
+    ```
+    pelican content -o output -s pelicanconf.py \
+    ghp-import output \
+    git push --all origin \
+    /
+    ``` 
+    This will push both branches simultaneously.
 6. At this point, after github runs its github-pages action, you should have a website, available either at `<your-username>.github.io`, or the custom URL you defined earlier.
 
 I probably forgot something, so if you're stuck, feel free to email me at ryan@rousebrowse.com
