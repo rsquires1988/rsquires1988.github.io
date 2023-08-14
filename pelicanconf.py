@@ -9,7 +9,7 @@ TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'en'
 
-THEME = "/home/vscode/pelican-themes/pelican-twitchy"
+THEME = "/home/vscode/pelican-themes/flex"
 
 DELETE_OUTPUT_DIRECTORY = True
 
@@ -37,8 +37,15 @@ DEFAULT_PAGINATION = 10
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
-LOAD_CONTENT_CACHE = False
-IMAGE_PROCESS_FORCE = True
+THEME_COLOR = 'dark'
+THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
+THEME_COLOR_ENABLE_USER_OVERRIDE = True
+
+PYGMENTS_STYLE = 'emacs'
+PYGMENTS_STYLE_DARK = 'monokai'
+
+# LOAD_CONTENT_CACHE = False
+# IMAGE_PROCESS_FORCE = True
 IMAGE_PROCESS = {
     "thumb": {
         "type": "image",
