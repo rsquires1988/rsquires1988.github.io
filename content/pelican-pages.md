@@ -22,7 +22,9 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 
         ```bash
         pelican content -o output -s pelicanconf.py &&
+
         ghp-import output &&
+        
         git push --all origin
         ```
 
