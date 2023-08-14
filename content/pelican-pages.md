@@ -6,7 +6,7 @@ Author: Ryan Squires
 Summary: I didn't hear no bell
 
 <!-- ![SQUAAAAWK!]({static}/images/goofypelican.jpeg){: .image-process-article-image} -->
-![SQUAAAAWK!]({static}/images/goofypelican.jpeg){: .image-process-article-image}
+![SQUAAAAWK!]({static}/images/goofypelican.jpeg){: .image-process-crisp}
 
 ## Read the docs.  No, the other docs.
 
