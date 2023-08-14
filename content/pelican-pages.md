@@ -1,6 +1,6 @@
 Title: Pelican on GitHub Pages
 Date: 2023-08-12
-Category: Snippets
+Category: Guides
 Tags: github, python, pelican, devcontainers, vscode, docker, pages, gh-pages
 Author: Ryan Squires
 Summary: I didn't hear no bell
