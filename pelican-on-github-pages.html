@@ -89,16 +89,22 @@
 <li>I also suggest setting up a <a href="https://github.com/getpelican/pelican-themes">theme</a>. I cloned the aforelinked repo to my devcontainer's home directory, <code>/home/vscode/</code>, as per its README, and then back in <code>/workspaces/&lt;your-gh-username&gt;.github.io/pelicanconf.py</code>, added <code>THEME = /home/vscode/pelican-themes/&lt;your-choice-of-theme&gt;</code>.</li>
 </ul>
 </li>
-<li>For future repo cleanliness, I added <code>output/</code>, <code>__pycache__/</code>, and <code>.gitignore</code> to a .gitignore file (create it if it doesn't exist yet) in the main branches' root directory.  This prevents the output directory from existing in both branches, which I found sometimes confused git, which caused a need for multiple commits.<ul>
+<li>
+<p>For future repo cleanliness, I added <code>output/</code>, <code>__pycache__/</code>, and <code>.gitignore</code> to a .gitignore file (create it if it doesn't exist yet) in the main branches' root directory.  This prevents the output directory from existing in both branches, which I found sometimes confused git, which caused a need for multiple commits.</p>
+<ul>
 <li>Now, follow the Pelican docs' <a href="https://docs.getpelican.com/en/latest/tips.html#publishing-to-github">guide on publishing a project page to github</a>.</li>
-<li>In order to do this automatically every time you commit, follow <a href="https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit">this</a>. You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit to push both branches simultaneously: 
- <code>bash
-    pelican content -o output -s pelicanconf.py &amp;&amp;
-    ghp-import output &amp;&amp;
-    git push --all origin</code></li>
+<li>In order to do this automatically every time you commit, follow <a href="https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit">this</a>. You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit to push both branches simultaneously: <div class="highlight"><pre><span></span><code><span class="err">```</span><span class="n">bash</span>
+<span class="n">pelican</span> <span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="n">output</span> <span class="o">-</span><span class="n">s</span> <span class="n">pelicanconf</span><span class="o">.</span><span class="n">py</span> <span class="o">&amp;&amp;</span> 
+<span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="nn">output</span> <span class="o">&amp;&amp;</span> 
+<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">all</span> <span class="n">origin</span>
+<span class="err">```</span>
+</code></pre></div>
+</li>
 </ul>
 </li>
-<li>At this point, after github runs its github-pages action, you should have a website, available either at <code>&lt;your-username&gt;.github.io</code>, or the custom URL you defined earlier.</li>
+<li>
+<p>At this point, after github runs its github-pages action, you should have a website, available either at <code>&lt;your-username&gt;.github.io</code>, or the custom URL you defined earlier.</p>
+</li>
 </ol>
 <p>I probably forgot something, so if you're stuck, feel free to email me at ryan@rousebrowse.com</p>
 <h3>Happy dotcom-ing!</h3>
