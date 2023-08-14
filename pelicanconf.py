@@ -62,7 +62,7 @@ IMAGE_PROCESS = {
     },
     "article-image": {
         "type": "image",
-        "ops": ["scale_out 300 300 True"],
+        "ops": ["scale_in 300 300 True"],
     },
     "crisp": {
         "type": "responsive-image",
