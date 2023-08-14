@@ -15,7 +15,7 @@ PATH = 'content'
 OUTPUT_PATH = 'output'
 DELETE_OUTPUT_DIRECTORY = True
 
-BROWSER_COLOR = "#5e644f"
+BROWSER_COLOR = "#ffffff"#"#5e644f"
 ROBOTS = "index, follow"
 
 COPYRIGHT_YEAR = 2023
@@ -33,8 +33,8 @@ AUTHOR_FEED_RSS = None
 #          ('Jinja2', 'https://palletsprojects.com/p/jinja/'))
 
 # Social widget
-SOCIAL = (('GitHub', 'https://github.com/rsquires1988'),
-          ('LinkedIn', 'https://www.linkedin.com/in/ryan-squires-0a15841b0/'))
+SOCIAL = (('github', 'https://github.com/rsquires1988'),
+          ('linkedin', 'https://www.linkedin.com/in/ryan-squires-0a15841b0/'))
 
 DEFAULT_PAGINATION = 10
 
@@ -51,7 +51,7 @@ THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 
 PYGMENTS_STYLE = 'emacs'
-PYGMENTS_STYLE_DARK = 'native'
+PYGMENTS_STYLE_DARK = 'monokai'
 
 # LOAD_CONTENT_CACHE = False
 IMAGE_PROCESS_FORCE = True
