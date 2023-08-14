@@ -30,4 +30,4 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 
 I probably forgot something, so if you're stuck, feel free to email me at ryan@rousebrowse.com
 
-### Happy dotcom-ing!
+###### Now to write some content...
