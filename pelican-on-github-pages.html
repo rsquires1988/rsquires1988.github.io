@@ -95,7 +95,7 @@
 <li>Now, follow the Pelican docs' <a href="https://docs.getpelican.com/en/latest/tips.html#publishing-to-github">guide on publishing a project page to github</a>.</li>
 <li>
 <p>In order to do this automatically every time you commit, follow <a href="https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit">this</a>. You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit: </p>
-<p>:::bash
+<p>```bash
 pelican content -o output -s pelicanconf.py &amp;&amp;
 ghp-import output &amp;&amp;
 git push --all origin</p>
