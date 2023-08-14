@@ -23,7 +23,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
         OUTPUT_PATH = 'output'
         DELETE_OUTPUT_DIRECTORY = True      # possibly unnecessary, but I used it
 
-    - If you're using a custom URL, [follow this section of the docs'](https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site) instructions. The CNAME file should be created in `content/extras/`, with your custom URL (no http(s)://) and add the following to pelicanconf.py:
+    - If you're using a custom URL, [follow this section of the docs'](https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site) instructions. The CNAME file should be created in `content/extras/`, and should contain your custom URL, sans http(s)://. Then, add the following to pelicanconf.py:
             
             :::python
             STATIC_PATHS = ['images', 'extra/CNAME',]
