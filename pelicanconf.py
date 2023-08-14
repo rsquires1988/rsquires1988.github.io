@@ -15,7 +15,7 @@ PATH = 'content'
 OUTPUT_PATH = 'output'
 DELETE_OUTPUT_DIRECTORY = True
 
-BROWSER_COLOR = "#5e644f"
+# BROWSER_COLOR = "#5e644f"
 ROBOTS = "index, follow"
 
 COPYRIGHT_YEAR = 2023
