@@ -24,6 +24,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
         pelican content -o output -s pelicanconf.py &&
         ghp-import output &&
         git push --all origin
+        ```
 
     This will push both branches simultaneously.
 6. At this point, after github runs its github-pages action, you should have a website, available either at `<your-username>.github.io`, or the custom URL you defined earlier.
