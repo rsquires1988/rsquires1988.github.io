@@ -85,9 +85,26 @@
 <ol>
 <li><a href="https://docs.docker.com/desktop/">Install Docker</a> on all machines involved</li>
 <li>On the machine on which you want the dev container to be hosted, follow steps 1-4 <a href="https://cloudbytes.dev/snippets/automate-deployment-of-pelican-website-to-github-pages">here</a> to get your Pelican dev container up and running.</li>
-<li>Once that's up, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">create your Github pages site repository</a> and connect it as a remote to your local repo. I chose to make a "Project" site, although I think the distinction is somewhat moot here. For context, the final product will contain your Pelican configs and assets on the main branch, and your site's actual html on the gh-pages branch.</li>
-<li>Make any changes to your pelicanconf.py file that you need to, but here there be gotchas. Make sure that your <code>SITEURL</code> variable is set to the URL you want your site to be available on.  If you intend to use a custom URL, use that here, including <code>https://</code>. Set <code>OUTPUT_PATH</code> to <code>'output'</code>, and <code>PATH</code> to <code>'content'</code>.  I'm not entirely sure if this one was necessary or not, but I set <code>DELETE_OUTPUT_DIRECTORY</code> to <code>True</code>.  Also, if you're using a custom URL, <a href="https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site">follow this section of the docs'</a> instructions.  The <code>STATIC_PATHS</code> and <code>EXTRA_PATH_METADATA</code> variables should be set in your pelicanconf.py, and the CNAME file should be created in ./content/extras/.<ul>
-<li>I also suggest setting up a <a href="https://github.com/getpelican/pelican-themes">theme</a>. I cloned the aforelinked repo to my devcontainer's home directory, <code>/home/vscode/</code>, as per its README, and then back in <code>/workspaces/&lt;your-gh-username&gt;.github.io/pelicanconf.py</code>, added <code>THEME = /home/vscode/pelican-themes/&lt;your-choice-of-theme&gt;</code>.</li>
+<li>Once that's up, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">create your Github pages site repository</a> and connect it as a remote to your local repo. I chose to make a "Project" site, meaning your main branch will contain your Pelican configs and assets, and your site's actual html will be on the gh-pages branch.</li>
+<li>
+<p>In your pelicanconf.py file, located in <code>workspaces/&lt;gh-username&gt;.github.io/</code>, make sure the following variables are set, in addition to the ones set automatically by the <code>pelican-autoconfig</code> command you ran in Step 2. Careful: here there be gotchas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">'https://your.url.com'</span>    <span class="c1"># either your-username.github.io or a custom domain</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s1">'content'</span>
+<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="s1">'output'</span>
+<span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="kc">True</span>      <span class="c1"># possibly unnecessary, but I used it</span>
+</code></pre></div>
+<ul>
+<li>
+<p>If you're using a custom URL, <a href="https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site">follow this section of the docs'</a> instructions. The CNAME file should be created in <code>content/extras/</code>, with your custom URL (no http(s)://) and add the following to pelicanconf.py:</p>
+<div class="highlight"><pre><span></span><code><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'images'</span><span class="p">,</span> <span class="s1">'extra/CNAME'</span><span class="p">,]</span>
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'extra/CNAME'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'path'</span><span class="p">:</span> <span class="s1">'CNAME'</span><span class="p">},}</span>
+</code></pre></div>
+</li>
+<li>
+<p>I also suggest setting up a <a href="https://github.com/getpelican/pelican-themes">theme</a>. I cloned the aforelinked repo to my devcontainer's home directory, <code>/home/vscode/</code>, as per its README, and then back in <code>pelicanconf.py</code>, added</p>
+<div class="highlight"><pre><span></span><code><span class="n">THEME</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">vscode</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">themes</span><span class="o">/&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">choice</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">theme</span><span class="o">&gt;</span>
+</code></pre></div>
+</li>
 </ul>
 </li>
 <li>
