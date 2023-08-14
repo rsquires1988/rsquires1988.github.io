@@ -4,8 +4,8 @@ SITENAME = 'Blog'
 SITETITLE = 'Rouse Browse'
 SITESUBTITLE = 'General Devvery'
 SITEDESCRIPTION = "'It's not safe out here. It's wondrous, with treasures to satiate desires both subtle and gross. But it's not for the timid.'"
-SITELOGO = SITEURL + "/images/profile.png"
-FAVICON = SITEURL + "images/favicon.ico"
+SITELOGO = SITEURL + "/images/profile.jpeg"
+FAVICON = SITEURL + "/images/favicon.ico"
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
@@ -28,12 +28,12 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll #
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'))
+# LINKS = (('Pelican', 'https://getpelican.com/'),
+#          ('Python.org', 'https://www.python.org/'),
+#          ('Jinja2', 'https://palletsprojects.com/p/jinja/'))
 
 # Social widget
-SOCIAL = (('GitHub', 'https://rsquires1988.github.com'),
+SOCIAL = (('GitHub', 'https://github.com/rsquires1988'),
           ('LinkedIn', 'https://www.linkedin.com/in/ryan-squires-0a15841b0/'))
 
 DEFAULT_PAGINATION = 10
@@ -41,8 +41,8 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-STATIC_PATHS = ['images', 'extra/CNAME', 'extra/custom.css']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, 'extra/custom.css': {'path': 'static/custom.css'}}
+STATIC_PATHS = ['images', 'extra/CNAME',]# 'extra/custom.css']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}# 'extra/custom.css': {'path': 'static/custom.css'}}
 
 MAIN_MENU = True
 
