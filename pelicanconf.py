@@ -9,7 +9,7 @@ TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'en'
 
-THEME = "/home/vscode/pelican-themes/sneakyidea"
+THEME = "/home/vscode/pelican-themes/pelican-twitchy"
 
 DELETE_OUTPUT_DIRECTORY = True
 
@@ -46,7 +46,7 @@ IMAGE_PROCESS = {
     },
     "article-image": {
         "type": "image",
-        "ops": ["scale_in 100 100 False"],
+        "ops": ["scale_out 100 100 False"],
     },
     "crisp": {
         "type": "responsive-image",
