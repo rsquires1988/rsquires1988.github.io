@@ -91,15 +91,13 @@
 </li>
 <li>For future repo cleanliness, I added <code>output/</code>, <code>__pycache__/</code>, and <code>.gitignore</code> to a .gitignore file (create it if it doesn't exist yet) in the main branches' root directory.  This prevents the output directory from existing in both branches, which I found sometimes confused git, which caused a need for multiple commits.<ul>
 <li>Now, follow the Pelican docs' <a href="https://docs.getpelican.com/en/latest/tips.html#publishing-to-github">guide on publishing a project page to github</a>.</li>
-<li>In order to do this automatically every time you commit, follow <a href="https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit">this</a>. You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit to push both branches simultaneously: </li>
+<li>In order to do this automatically every time you commit, follow <a href="https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit">this</a>. You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit to push both branches simultaneously: 
+ <code>bash
+    pelican content -o output -s pelicanconf.py &amp;&amp;
+    ghp-import output &amp;&amp;
+    git push --all origin</code></li>
 </ul>
 </li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="w">        </span>pelican<span class="w"> </span>content<span class="w"> </span>-o<span class="w"> </span>output<span class="w"> </span>-s<span class="w"> </span>pelicanconf.py<span class="w"> </span><span class="o">&amp;&amp;</span>
-<span class="w">        </span>ghp-import<span class="w"> </span>output<span class="w"> </span><span class="o">&amp;&amp;</span>
-<span class="w">        </span>git<span class="w"> </span>push<span class="w"> </span>--all<span class="w"> </span>origin
-</code></pre></div>
-<ol>
 <li>At this point, after github runs its github-pages action, you should have a website, available either at <code>&lt;your-username&gt;.github.io</code>, or the custom URL you defined earlier.</li>
 </ol>
 <p>I probably forgot something, so if you're stuck, feel free to email me at ryan@rousebrowse.com</p>
