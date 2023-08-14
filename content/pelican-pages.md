@@ -14,9 +14,26 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 
 1. [Install Docker](https://docs.docker.com/desktop/) on all machines involved
 2. On the machine on which you want the dev container to be hosted, follow steps 1-4 [here](https://cloudbytes.dev/snippets/automate-deployment-of-pelican-website-to-github-pages) to get your Pelican dev container up and running.
-3. Once that's up, [create your Github pages site repository](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) and connect it as a remote to your local repo. I chose to make a "Project" site, although I think the distinction is somewhat moot here. For context, the final product will contain your Pelican configs and assets on the main branch, and your site's actual html on the gh-pages branch.
-4. Make any changes to your pelicanconf.py file that you need to, but here there be gotchas. Make sure that your `SITEURL` variable is set to the URL you want your site to be available on.  If you intend to use a custom URL, use that here, including `https://`. Set `OUTPUT_PATH` to `'output'`, and `PATH` to `'content'`.  I'm not entirely sure if this one was necessary or not, but I set `DELETE_OUTPUT_DIRECTORY` to `True`.  Also, if you're using a custom URL, [follow this section of the docs'](https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site) instructions.  The `STATIC_PATHS` and `EXTRA_PATH_METADATA` variables should be set in your pelicanconf.py, and the CNAME file should be created in ./content/extras/.
-    - I also suggest setting up a [theme](https://github.com/getpelican/pelican-themes). I cloned the aforelinked repo to my devcontainer's home directory, `/home/vscode/`, as per its README, and then back in `/workspaces/<your-gh-username>.github.io/pelicanconf.py`, added `THEME = /home/vscode/pelican-themes/<your-choice-of-theme>`.
+3. Once that's up, [create your Github pages site repository](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) and connect it as a remote to your local repo. I chose to make a "Project" site, meaning your main branch will contain your Pelican configs and assets, and your site's actual html will be on the gh-pages branch.
+4. In your pelicanconf.py file, located in `workspaces/<gh-username>.github.io/`, make sure the following variables are set, in addition to the ones set automatically by the `pelican-autoconfig` command you ran in Step 2. Careful: here there be gotchas.
+
+        :::python
+        SITEURL = 'https://your.url.com'    # either your-username.github.io or a custom domain
+        PATH = 'content'
+        OUTPUT_PATH = 'output'
+        DELETE_OUTPUT_DIRECTORY = True      # possibly unnecessary, but I used it
+
+    - If you're using a custom URL, [follow this section of the docs'](https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site) instructions. The CNAME file should be created in `content/extras/`, with your custom URL (no http(s)://) and add the following to pelicanconf.py:
+            
+            :::python
+            STATIC_PATHS = ['images', 'extra/CNAME',]
+            EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+
+    - I also suggest setting up a [theme](https://github.com/getpelican/pelican-themes). I cloned the aforelinked repo to my devcontainer's home directory, `/home/vscode/`, as per its README, and then back in `pelicanconf.py`, added
+            
+            :::python
+            THEME = /home/vscode/pelican-themes/<your-choice-of-theme>
+
 5. For future repo cleanliness, I added `output/`, `__pycache__/`, and `.gitignore` to a .gitignore file (create it if it doesn't exist yet) in the main branches' root directory.  This prevents the output directory from existing in both branches, which I found sometimes confused git, which caused a need for multiple commits.
     - Now, follow the Pelican docs' [guide on publishing a project page to github](https://docs.getpelican.com/en/latest/tips.html#publishing-to-github).
     - In order to do this automatically every time you commit, follow [this](https://docs.getpelican.com/en/latest/tips.html#update-your-site-on-each-commit). You may need to create the "post-commit" file it mentions (I did). If you plan on having both your project and site branches, I recommend tweaking the suggested command a bit to push both branches simultaneously: 
