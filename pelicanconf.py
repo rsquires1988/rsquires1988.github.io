@@ -1,17 +1,24 @@
 AUTHOR = 'Ryan Squires'
-SITENAME = 'Rouse Browse'
 SITEURL = 'https://rousebrowse.com'
-OUTPUT_PATH = 'output/'
-
-PATH = 'content'
+SITENAME = 'Blog'
+SITETITLE = 'Rouse Browse'
+SITESUBTITLE = 'General Devvery'
+SITEDESCRIPTION = "'It's not safe out here. It's wondrous, with treasures to satiate desires both subtle and gross. But it's not for the timid.'"
+SITELOGO = SITEURL + "/images/profile.png"
+FAVICON = SITEURL + "images/favicon.ico"
 
 TIMEZONE = 'America/Los_Angeles'
-
 DEFAULT_LANG = 'en'
-
 THEME = "/home/vscode/pelican-themes/Flex"
 
+PATH = 'content'
+OUTPUT_PATH = 'output'
 DELETE_OUTPUT_DIRECTORY = True
+
+BROWSER_COLOR = "#5e644f"
+ROBOTS = "index, follow"
+
+COPYRIGHT_YEAR = 2023
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -34,8 +41,10 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-STATIC_PATHS = ['images', 'extra/CNAME']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = ['images', 'extra/CNAME', 'extra/custom.css']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, 'extra/custom.css': {'path': 'static/custom.css'}}
+
+MAIN_MENU = True
 
 THEME_COLOR = 'dark'
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
