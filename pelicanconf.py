@@ -9,7 +9,8 @@ FAVICON = SITEURL + "/images/favicon.ico"
 
 TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
-THEME = "/home/vscode/pelican-themes/Flex"
+# THEME = "/home/vscode/pelican-themes/Flex"
+THEME = "./themes/Flex"
 # some changes to ~/pelican-themes/Flex/static/stylesheet/dark-theme.min.css and style.min.css for inline code snippet colors
 
 PATH = 'content'
@@ -35,7 +36,8 @@ AUTHOR_FEED_RSS = None
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/rsquires1988'),
-          ('linkedin', 'https://www.linkedin.com/in/ryan-squires-0a15841b0/'))
+          ('linkedin', 'https://www.linkedin.com/in/ryan-squires-0a15841b0/'),
+          ('instagram', 'https://www.instagram.com/rysquoi/'),)
 
 DEFAULT_PAGINATION = 10
 

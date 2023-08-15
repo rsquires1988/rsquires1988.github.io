@@ -1,4 +1,29 @@
 output/
+themes/Flex/.github/
+themes/Flex/docs/
+themes/Flex/node_modules/
+themes/Flex/pygments/
+themes/Flex/static/dark-theme/
+themes/Flex/static/font-awesome/
+themes/Flex/static/img/
+themes/Flex/static/isso/
+themes/Flex/static/pygments/
+themes/Flex/static/stork/
+themes/Flex/static/tipuesearch/
+themes/Flex/templates/
+themes/Flex/translations
+themes/Flex/.gitignore
+themes/Flex/.travis.yml
+themes/Flex/CHANGELOG.md
+themes/Flex/gulpfile.js
+themes/Flex/LICENSE
+themes/Flex/package-lock.json
+themes/Flex/package.json
+themes/Flex/README.md
+themes/Flex/screenshot.png
+themes/Flex/tox.ini
+themes/Flex/transifex.py
+themes/Flex/translate.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
