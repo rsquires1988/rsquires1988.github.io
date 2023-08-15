@@ -11,7 +11,7 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 # THEME = "/home/vscode/pelican-themes/Flex"
 THEME = "./themes/Flex"
-# some changes to ~/pelican-themes/Flex/static/stylesheet/dark-theme.min.css and style.min.css for inline code snippet colors
+# moved theme from and some changes to ~/pelican-themes/Flex/static/stylesheet/dark-theme.min.css and style.min.css for inline code snippet colors
 
 PATH = 'content'
 OUTPUT_PATH = 'output'
