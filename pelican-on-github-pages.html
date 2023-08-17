@@ -137,7 +137,7 @@ git<span class="w"> </span>push<span class="w"> </span>--all<span class="w"> </s
 <li>
 <p>If you're hosting the devcontainer on another machine and SSH-ing in, there's an extra wrinkle:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>context<span class="w"> </span>create<span class="w"> </span>&lt;name-of-host&gt;<span class="w"> </span>--docker<span class="w"> </span><span class="s2">"host=ssh://&lt;username&gt;@&lt;IP&gt;"</span>
-docker<span class="w"> </span>--context<span class="w"> </span>&lt;name-of-host&gt;<span class="w"> </span>cp<span class="w"> </span>/path/and/filename.jpg<span class="w"> </span>elated_robinson:/workspaces/&lt;ghUsername&gt;.github.io/content/images/
+docker<span class="w"> </span>--context<span class="w"> </span>&lt;name-of-host&gt;<span class="w"> </span>cp<span class="w"> </span>/path/and/filename.jpg<span class="w"> </span>&lt;container_name&gt;:/workspaces/&lt;ghUsername&gt;.github.io/content/images/
 </code></pre></div>
 <p>The <code>&lt;name-of-host&gt;</code> there is entirely arbitrary and just for docker's use to identify the context you're creating.</p>
 </li>
