@@ -56,7 +56,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 
         :::bash
         docker context create <name-of-host> --docker "host=ssh://<username>@<IP>"
-        docker --context <name-of-host> cp /path/and/filename.jpg elated_robinson:/workspaces/<ghUsername>.github.io/content/images/
+        docker --context <name-of-host> cp /path/and/filename.jpg <container_name>:/workspaces/<ghUsername>.github.io/content/images/
 
     The `<name-of-host>` there is entirely arbitrary and just for docker's use to identify the context you're creating.
 
