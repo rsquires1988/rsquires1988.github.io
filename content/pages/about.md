@@ -1,4 +1,4 @@
-Title: About the Author
+Title: About
 
 # Hi!
 
