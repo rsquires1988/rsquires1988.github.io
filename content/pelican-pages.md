@@ -3,14 +3,13 @@ Date: 2023-08-12
 Category: Guides
 Tags: github, python, pelican, devcontainers, vscode, docker, pages, gh-pages
 Author: Ryan Squires
-Summary: I didn't hear no bell
+Summary: Make a devblog, they said.  It'll be easy, they said.
 
-<!-- language: lang-bash -->
 ![SQUAAAAWK!]({static}/images/goofypelican.jpeg){: .image-process-article-image}
 
 ## Read the docs.  No, the other docs.
 
-If you happen to be trying to set up a Pelican site using github pages, just [follow the Pelican docs' tips page](https://docs.getpelican.com/en/latest/tips.html). Originally, I found a link on Pelican's wiki page to an outdated guide using the [pelican-to-github-pages action](https://github.com/marketplace/actions/pelican-to-github-pages) that has fallen into disrepair.  But there's good news!  All of the tools you need are built into Pelican, git, and github directly. In my (many) attempts at getting that action working though, I learned a lot about [VSCode's dev containers implementation](https://code.visualstudio.com/docs/devcontainers/containers). That part of the project stuck, and I absolutely recommend giving them a shot. For extra fun, I happened to be SSHing into my burgeoning homelab's raspberry pi throughout this process, which surprisingly, thanks to VSCode's remote explorer extension, really didn't add much complexity, to my surprise. Here's a brief breakdown of how to get it all that up and running.
+If you happen to be trying to set up a Pelican site using github pages, just [follow the Pelican docs' tips page](https://docs.getpelican.com/en/latest/tips.html). Originally, I found a link on Pelican's wiki page to an outdated guide using the [pelican-to-github-pages action](https://github.com/marketplace/actions/pelican-to-github-pages) that has fallen into disrepair. But there's good news! All of the tools you need are built into Pelican, git, and github directly. In my (many) attempts at getting that action working though, I learned a lot about [VSCode's dev containers implementation](https://code.visualstudio.com/docs/devcontainers/containers). That part of the project stuck, and I absolutely recommend giving them a shot. For extra fun, I happened to be SSHing into my burgeoning homelab's raspberry pi throughout this process, which surprisingly, thanks to VSCode's remote explorer extension, really didn't add much complexity, to my surprise. Here's a brief breakdown of how to get it all that up and running.
 
 1. [Install Docker](https://docs.docker.com/desktop/) on all machines involved
 2. On the machine on which you want the dev container to be hosted, follow steps 1-4 [here](https://cloudbytes.dev/snippets/automate-deployment-of-pelican-website-to-github-pages) to get your Pelican dev container up and running.
@@ -18,10 +17,10 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 4. In your pelicanconf.py file, located in `workspaces/<gh-username>.github.io/`, make sure the following variables are set, in addition to the ones set automatically by the `pelican-autoconfig` command you ran in Step 2. Careful: here there be gotchas.
 
         :::python
-        SITEURL = 'https://your.url.com'    # either your-username.github.io or a custom domain
+        SITEURL = 'https://your.url.com' # either <your-username>.github.io or your custom domain
         PATH = 'content'
         OUTPUT_PATH = 'output'
-        DELETE_OUTPUT_DIRECTORY = True      # possibly unnecessary, but I used it
+        DELETE_OUTPUT_DIRECTORY = True   # possibly unnecessary, but I used it
 
     - If you're using a custom URL, [follow this section of the docs'](https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site) instructions. The CNAME file should be created in `content/extras/`, and should contain your custom URL, sans http(s)://. Then, add the following to pelicanconf.py:
             
@@ -45,7 +44,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 
 6. At this point, after github runs its github-pages action, you should have a website, available either at `<your-username>.github.io`, or the custom URL you defined earlier.
 
-**Bonus!**  Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:
+**Bonus!** Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:
 
 - First, find your devcontainer's given name on the container's host with `docker ps`. Then, fill in the blanks:
 
