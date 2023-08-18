@@ -44,10 +44,11 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-STATIC_PATHS = ['images', 'extra/CNAME',]# 'extra/custom.css']
+STATIC_PATHS = ['images', 'pages', 'extra/CNAME',]# 'extra/custom.css']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}# 'extra/custom.css': {'path': 'static/custom.css'}}
 
 MAIN_MENU = True
+DISPLAY_PAGES_ON_MENU = True
 
 THEME_COLOR = 'dark'
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
