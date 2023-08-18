@@ -58,4 +58,5 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
         docker --context <name-of-host> cp /path/and/filename.jpg <container_name>:/workspaces/<ghUsername>.github.io/content/images/
 
     The `<name-of-host>` there is entirely arbitrary and just for docker's use to identify the context you're creating.
+
 ###### Now to write some content...
