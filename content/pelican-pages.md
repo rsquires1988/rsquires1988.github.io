@@ -48,6 +48,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 6. At this point, after github runs its github-pages action, you should have a website, available either at `<your-username>.github.io`, or the custom URL you defined earlier.
 
 **Bonus!** Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:
+
 - First, find your devcontainer's given name on the container's host with `docker ps`. Then, fill in the blanks:
 
         :::bash
