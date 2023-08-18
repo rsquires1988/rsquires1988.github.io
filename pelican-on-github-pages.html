@@ -132,12 +132,13 @@ git<span class="w"> </span>push<span class="w"> </span>--all<span class="w"> </s
 <p>At this point, after github runs its github-pages action, you should have a website, available either at <code>&lt;your-username&gt;.github.io</code>, or the custom URL you defined earlier.</p>
 </li>
 </ol>
-<p><strong>Bonus!</strong> Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:
-- First, find your devcontainer's given name on the container's host with <code>docker ps</code>. Then, fill in the blanks:</p>
-<div class="highlight"><pre><span></span><code>    :::bash
-    docker cp /path/and/filename.jpg &lt;container_name&gt;:/workspaces/&lt;ghUsername&gt;.github.io/content/images/
-</code></pre></div>
+<p><strong>Bonus!</strong> Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:</p>
 <ul>
+<li>
+<p>First, find your devcontainer's given name on the container's host with <code>docker ps</code>. Then, fill in the blanks:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>/path/and/filename.jpg<span class="w"> </span>&lt;container_name&gt;:/workspaces/&lt;ghUsername&gt;.github.io/content/images/
+</code></pre></div>
+</li>
 <li>
 <p>If you're hosting the devcontainer on another machine and SSH-ing in, there's an extra wrinkle:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>context<span class="w"> </span>create<span class="w"> </span>&lt;name-of-host&gt;<span class="w"> </span>--docker<span class="w"> </span><span class="s2">"host=ssh://&lt;username&gt;@&lt;IP&gt;"</span>
