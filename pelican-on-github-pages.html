@@ -87,9 +87,15 @@
 <h2>Read the docs.  No, the other docs.</h2>
 <p>If you happen to be trying to set up a Pelican site using github pages, just <a href="https://docs.getpelican.com/en/latest/tips.html">follow the Pelican docs' tips page</a>. Originally, I found a link on Pelican's wiki page to an outdated guide using the <a href="https://github.com/marketplace/actions/pelican-to-github-pages">pelican-to-github-pages action</a> that has fallen into disrepair. But there's good news! All of the tools you need are built into Pelican, git, and github directly. In my (many) attempts at getting that action working though, I learned a lot about <a href="https://code.visualstudio.com/docs/devcontainers/containers">VSCode's dev containers implementation</a>. That part of the project stuck, and I absolutely recommend giving them a shot. For extra fun, I happened to be SSHing into my burgeoning homelab's raspberry pi throughout this process, which surprisingly, thanks to VSCode's remote explorer extension, really didn't add much complexity, to my surprise. Here's a brief breakdown of how to get it all that up and running.</p>
 <ol>
-<li><a href="https://docs.docker.com/desktop/">Install Docker</a> on all machines involved</li>
-<li>On the machine on which you want the dev container to be hosted, follow steps 1-4 <a href="https://cloudbytes.dev/snippets/automate-deployment-of-pelican-website-to-github-pages">here</a> to get your Pelican dev container up and running.</li>
-<li>Once that's up, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">create your Github pages site repository</a> and connect it as a remote to your local repo. I chose to make a "Project" site, meaning your main branch will contain your Pelican configs and assets, and your site's actual html will be on the gh-pages branch.</li>
+<li>
+<p><a href="https://docs.docker.com/desktop/">Install Docker</a> on all machines involved.</p>
+</li>
+<li>
+<p>On the machine on which you want the dev container to be hosted, follow steps 1-4 <a href="https://cloudbytes.dev/snippets/automate-deployment-of-pelican-website-to-github-pages">here</a> to get your Pelican dev container up and running.</p>
+</li>
+<li>
+<p>Once that's up, <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">create your Github pages site repository</a> and connect it as a remote to your local repo. I chose to make a "Project" site, meaning your main branch will contain your Pelican configs and assets, and your site's actual html will be on the gh-pages branch.</p>
+</li>
 <li>
 <p>In your pelicanconf.py file, located in <code>workspaces/&lt;gh-username&gt;.github.io/</code>, make sure the following variables are set, in addition to the ones set automatically by the <code>pelican-autoconfig</code> command you ran in Step 2. Careful: here there be gotchas.</p>
 <div class="highlight"><pre><span></span><code><span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">'https://your.url.com'</span> <span class="c1"># either &lt;your-username&gt;.github.io or your custom domain</span>
@@ -105,7 +111,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>I also suggest setting up a <a href="https://github.com/getpelican/pelican-themes">theme</a>. I cloned the aforelinked repo to my devcontainer's home directory, <code>/home/vscode/</code>, as per its README, and then back in <code>pelicanconf.py</code>, added</p>
+<p>I also suggest setting up a <a href="https://github.com/getpelican/pelican-themes">theme</a>. I cloned the aforelinked repo to my devcontainer's home directory, <code>/home/vscode/</code>, as per its README, and then back in <code>pelicanconf.py</code>, added:</p>
 <div class="highlight"><pre><span></span><code><span class="n">THEME</span> <span class="o">=</span> <span class="s2">"/home/vscode/pelican-themes/&lt;your-choice-of-theme&gt;"</span>
 </code></pre></div>
 </li>
@@ -126,13 +132,12 @@ git<span class="w"> </span>push<span class="w"> </span>--all<span class="w"> </s
 <p>At this point, after github runs its github-pages action, you should have a website, available either at <code>&lt;your-username&gt;.github.io</code>, or the custom URL you defined earlier.</p>
 </li>
 </ol>
-<p><strong>Bonus!</strong> Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:</p>
-<ul>
-<li>
-<p>First, find your devcontainer's given name on the container's host with <code>docker ps</code>. Then, fill in the blanks:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>cp<span class="w"> </span>/path/and/filename.jpg<span class="w"> </span>&lt;container_name&gt;:/workspaces/&lt;ghUsername&gt;.github.io/content/images/
+<p><strong>Bonus!</strong> Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:
+- First, find your devcontainer's given name on the container's host with <code>docker ps</code>. Then, fill in the blanks:</p>
+<div class="highlight"><pre><span></span><code>    :::bash
+    docker cp /path/and/filename.jpg &lt;container_name&gt;:/workspaces/&lt;ghUsername&gt;.github.io/content/images/
 </code></pre></div>
-</li>
+<ul>
 <li>
 <p>If you're hosting the devcontainer on another machine and SSH-ing in, there's an extra wrinkle:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>context<span class="w"> </span>create<span class="w"> </span>&lt;name-of-host&gt;<span class="w"> </span>--docker<span class="w"> </span><span class="s2">"host=ssh://&lt;username&gt;@&lt;IP&gt;"</span>
