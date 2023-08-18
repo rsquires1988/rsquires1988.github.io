@@ -31,7 +31,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
     - I also suggest setting up a [theme](https://github.com/getpelican/pelican-themes). I cloned the aforelinked repo to my devcontainer's home directory, `/home/vscode/`, as per its README, and then back in `pelicanconf.py`, added
             
             :::python
-            THEME = /home/vscode/pelican-themes/<your-choice-of-theme>
+            THEME = "/home/vscode/pelican-themes/<your-choice-of-theme>"
 
 5. For future repo cleanliness, I added `output/`, `__pycache__/`, and `.gitignore` to a .gitignore file (create it if it doesn't exist yet) in the main branches' root directory.  This prevents the output directory from existing in both branches, which I found sometimes confused git, causing a need for multiple commits.
     - Now, follow the Pelican docs' [guide on publishing a project page to github](https://docs.getpelican.com/en/latest/tips.html#publishing-to-github).
