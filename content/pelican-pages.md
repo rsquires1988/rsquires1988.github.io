@@ -47,7 +47,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 
 **Bonus!**  Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:
 
-- First, find your devcontainer's given name on the container's host with `docker ps`.
+- First, find your devcontainer's given name on the container's host with `docker ps`. Then, fill in the blanks:
 
         :::bash
         docker cp /path/and/filename.jpg <container_name>:/workspaces/<ghUsername>.github.io/content/images/
