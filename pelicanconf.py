@@ -11,11 +11,17 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 # THEME = "/home/vscode/pelican-themes/Flex"
 THEME = "./themes/Flex"
+PLUGINS = ['pelican_githubprojects',]
 # moved theme from and some changes to ~/pelican-themes/Flex/static/stylesheet/dark-theme.min.css and style.min.css for inline code snippet colors
 
 PATH = 'content'
 OUTPUT_PATH = 'output'
 DELETE_OUTPUT_DIRECTORY = True
+
+GITHUB_USER = 'rsquires1988'
+GITHUB_USER_TYPE = "owner"
+GITHUB_SORT_BY = "created"
+GITHUB_DIRECTION = "desc"
 
 # BROWSER_COLOR = "#5e644f"
 ROBOTS = "index, follow"
@@ -44,8 +50,8 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-STATIC_PATHS = ['images', 'pages', 'extra/CNAME',]# 'extra/custom.css']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}# 'extra/custom.css': {'path': 'static/custom.css'}}
+STATIC_PATHS = ['images', 'extra/CNAME', 'pages',] # 'projects']# 'extra/custom.css']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},} # 'extra/custom.css': {'path': 'static/custom.css'}}
 
 MAIN_MENU = True
 DISPLAY_PAGES_ON_MENU = True
@@ -67,6 +73,10 @@ IMAGE_PROCESS = {
     "article-image": {
         "type": "image",
         "ops": ["scale_in 300 300 True"],
+    },
+    "project-image": {
+        "type": "image",
+        "ops": ["scale_in 100 100 True"],
     },
     "crisp": {
         "type": "responsive-image",
