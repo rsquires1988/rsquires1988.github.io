@@ -1,0 +1,17 @@
+{% extends "page.html" %}
+{% block content %}
+    {% if GITHUB_USER %}
+        <article class="single">
+            <h1>Projects</h1>
+            {% for project in github_projects %}
+                {% if project.name not in [ "pelican-to-github-pages", "rsquires1988.github.io" ] %}
+                    <h4>{{ project.name }} <sup>({{ project.language }})</sup></h4>
+                    <p>{{ project.description }}</p>
+                    <p>
+                        <a href="{{ project.github_url }}">Check out the repo!</a>
+                    </p>
+                {% endif %}
+            {% endfor %}
+        </article>
+    {% endif %}
+{% endblock %}
