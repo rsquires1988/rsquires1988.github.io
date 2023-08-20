@@ -1,6 +1,6 @@
 AUTHOR = 'Ryan Squires'
 SITEURL = 'https://rousebrowse.com'
-SITENAME = 'Blog'
+SITENAME = 'RB'
 SITETITLE = 'Rouse Browse'
 SITESUBTITLE = 'What is this new devvery?'
 SITEDESCRIPTION = "'It's not safe out here. It's wondrous, with treasures to satiate desires both subtle and gross. But it's not for the timid.'"
