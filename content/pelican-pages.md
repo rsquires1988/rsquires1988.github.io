@@ -3,7 +3,7 @@ Date: 2023-08-12
 Category: Guides
 Tags: github, python, pelican, devcontainers, vscode, docker, pages, gh-pages
 Author: Ryan Squires
-Summary: Make a devblog, they said.  It'll be easy, they said.
+Summary: There's a Python in that series of tubes.
 
 ![SQUAAAAWK!]({static}/images/goofypelican.jpeg){: .image-process-article-image}
 
