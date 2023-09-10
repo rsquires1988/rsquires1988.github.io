@@ -17,7 +17,7 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 
 3. Once that's up, [create your Github pages site repository](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) and connect it as a remote to your local repo. I chose to make a "Project" site, meaning your main branch will contain your Pelican configs and assets, and your site's actual html will be on the gh-pages branch.
 
-4. In your pelicanconf.py file, located in `workspaces/<gh-username>.github.io/`, make sure the following variables are set, in addition to the ones set automatically by the `pelican-autoconfig` command you ran in Step 2. Careful: here there be gotchas.
+4. In your pelicanconf.py file, located in `/workspaces/<gh-username>.github.io/`, make sure the following variables are set, in addition to the ones set automatically by the `pelican-autoconfig` command you ran in Step 2. Careful: here there be gotchas.
 
         :::python
         SITEURL = 'https://your.url.com' # either <your-username>.github.io or your custom domain
