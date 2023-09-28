@@ -13,7 +13,7 @@ DEFAULT_LANG = 'en'
 THEME = "./themes/Flex"
 PLUGINS = ['pelican_githubprojects',]
 # moved theme from and some changes to ~/pelican-themes/Flex/static/stylesheet/dark-theme.min.css and style.min.css for inline code snippet colors
-
+# test commit
 PATH = 'content'
 OUTPUT_PATH = 'output'
 DELETE_OUTPUT_DIRECTORY = True
