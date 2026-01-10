@@ -27,14 +27,15 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.x'
           cache: 'pip'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pelican markdown
-          pip install pelican-githubprojects || true
+          # pelican-githubprojects may not be available, install if possible
+          pip install pelican-githubprojects 2>/dev/null || echo "pelican-githubprojects not available, skipping"
 
       - name: Build site
         run: make publish
