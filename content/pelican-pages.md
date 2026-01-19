@@ -20,16 +20,10 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
 4. In your pelicanconf.py file, located in `/workspaces/<gh-username>.github.io/`, make sure the following variables are set, in addition to the ones set automatically by the `pelican-autoconfig` command you ran in Step 2. Careful: here there be gotchas.
 
         :::python
-        SITEURL = 'https://your.url.com' # either <your-username>.github.io or your custom domain
+        SITEURL = 'https://<your-username>.github.io'
         PATH = 'content'
         OUTPUT_PATH = 'output'
         DELETE_OUTPUT_DIRECTORY = True   # possibly unnecessary, but I used it
-
-    - If you're using a custom URL, [follow this section of the docs'](https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site) instructions. The CNAME file should be created in `content/extras/`, and should contain your custom URL, sans http(s)://. Then, add the following to pelicanconf.py:
-            
-            :::python
-            STATIC_PATHS = ['images', 'extra/CNAME',]
-            EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
     - I also suggest setting up a [theme](https://github.com/getpelican/pelican-themes). I cloned the aforelinked repo to my devcontainer's home directory, `/home/vscode/`, as per its README, and then back in `pelicanconf.py`, added:
             
@@ -45,7 +39,9 @@ If you happen to be trying to set up a Pelican site using github pages, just [fo
             ghp-import output && 
             git push --all origin
 
-6. At this point, after github runs its github-pages action, you should have a website, available either at `<your-username>.github.io`, or the custom URL you defined earlier.
+6. At this point, after github runs its github-pages action, you should have a website, available at `<your-username>.github.io`.
+
+    **Note:** If you want to use a custom domain, follow [GitHub's documentation for managing custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site). You'll need to create a CNAME file in `content/extra/` and update your `pelicanconf.py` accordingly as described in [Pelican's documentation](https://docs.getpelican.com/en/latest/tips.html#copy-static-files-to-the-root-of-your-site).
 
 **Bonus!** Looking for an easy way to get images (or other files) onto your devcontainer? No problem! Docker to the rescue:
 
