@@ -5,9 +5,9 @@ The site at https://rsquires1988.github.io is showing a plain white page because
 
 ## Root Cause
 1. The GitHub Actions workflow (`.github/workflows/deploy.yml`) successfully builds the Pelican site with the correct URL (`https://rsquires1988.github.io`)
-2. However, the `gh-pages` branch contains old HTML files that were generated with the old custom domain
-3. GitHub Pages is configured to deploy from BOTH the workflow artifacts AND the `gh-pages` branch
-4. The `gh-pages` branch deployment runs after the workflow deployment, overwriting the correct content
+2. However, GitHub Pages is currently configured to deploy from the `gh-pages` branch, not from the workflow artifacts
+3. The `gh-pages` branch contains old HTML files that were generated with the old custom domain
+4. Since GitHub Pages is set to "Deploy from a branch," it ignores the workflow deployments and only serves content from the gh-pages branch
 
 ## Solution
 Change the GitHub Pages source to "GitHub Actions" and delete the outdated `gh-pages` branch.
@@ -47,11 +47,11 @@ git push origin --delete gh-pages
 - The site should now display properly with the Pelican theme and content
 
 ## Why This Happens
-GitHub Pages can be configured to deploy from two different sources:
+GitHub Pages can be configured to deploy from one of two sources:
 1. **Deploy from a branch** (legacy method) - GitHub automatically builds and deploys when a specified branch is updated
 2. **GitHub Actions** (modern method) - Custom workflows control the build and deployment process
 
-This repository has BOTH methods enabled, causing the gh-pages branch content (with old URLs) to overwrite the correct workflow deployment.
+This repository is currently set to "Deploy from a branch" (using the gh-pages branch), which means GitHub Pages ignores the workflow artifacts and only serves the outdated content from the gh-pages branch.
 
 ## How to Confirm It's Fixed
 After changing the Pages source to "GitHub Actions":
