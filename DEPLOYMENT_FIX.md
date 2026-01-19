@@ -10,32 +10,55 @@ The site at https://rsquires1988.github.io is showing a plain white page because
 4. The `gh-pages` branch deployment runs after the workflow deployment, overwriting the correct content
 
 ## Solution
-**Delete the `gh-pages` branch** to ensure only the GitHub Actions workflow deploys the site.
+Change the GitHub Pages source to "GitHub Actions" and delete the outdated `gh-pages` branch.
 
-### Steps to Fix
-1. Go to the repository settings
-2. Navigate to "Settings" > "Pages"
-3. Confirm that "Source" is set to "GitHub Actions" (not "Deploy from a branch")
-4. Delete the `gh-pages` branch by running:
-   ```bash
-   git push origin --delete gh-pages
-   ```
-   OR via the GitHub web interface:
-   - Go to the repository main page
-   - Click on "branches" (shows "X branches")
-   - Find the `gh-pages` branch
-   - Click the trash icon to delete it
+### Steps to Fix (REQUIRED)
 
-5. Once the branch is deleted, the next deployment from the GitHub Actions workflow will be the only source
-6. The site should render correctly at https://rsquires1988.github.io
+#### Step 1: Change GitHub Pages Source (CRITICAL)
+1. Go to https://github.com/rsquires1988/rsquires1988.github.io/settings/pages
+2. Under "Build and deployment" > "Source"
+3. Change from "Deploy from a branch" to **"GitHub Actions"**
+4. Click Save
 
-## Verification
-After deleting the `gh-pages` branch:
-1. Go to Actions tab
-2. Manually trigger the "Deploy Pelican Site to GitHub Pages" workflow (or push to main branch)
-3. Wait for the workflow to complete
-4. Visit https://rsquires1988.github.io
-5. The site should now display properly with the Pelican theme and content
+This is the CRITICAL step! Without this, GitHub Pages will continue to deploy from the gh-pages branch instead of the workflow artifacts.
+
+#### Step 2: Delete the gh-pages Branch (Recommended)
+Delete the `gh-pages` branch to prevent confusion:
+
+**Option A - Command Line:**
+```bash
+git push origin --delete gh-pages
+```
+
+**Option B - GitHub Web Interface:**
+1. Go to https://github.com/rsquires1988/rsquires1988.github.io/branches
+2. Find the `gh-pages` branch
+3. Click the trash icon to delete it
+
+#### Step 3: Trigger a New Deployment
+1. Go to https://github.com/rsquires1988/rsquires1988.github.io/actions
+2. Click on "Deploy Pelican Site to GitHub Pages" workflow
+3. Click "Run workflow" > "Run workflow" to manually trigger it
+4. OR simply push a commit to the `main` branch
+
+#### Step 4: Verify
+- Wait for the workflow to complete (should take ~30 seconds)
+- Visit https://rsquires1988.github.io
+- The site should now display properly with the Pelican theme and content
+
+## Why This Happens
+GitHub Pages can be configured to deploy from two different sources:
+1. **Deploy from a branch** (legacy method) - GitHub automatically builds and deploys when a specified branch is updated
+2. **GitHub Actions** (modern method) - Custom workflows control the build and deployment process
+
+This repository has BOTH methods enabled, causing the gh-pages branch content (with old URLs) to overwrite the correct workflow deployment.
+
+## How to Confirm It's Fixed
+After changing the Pages source to "GitHub Actions":
+1. Check https://github.com/rsquires1988/rsquires1988.github.io/deployments
+2. You should see deployments from the "github-pages" environment (from the workflow)
+3. The "pages build and deployment" workflow should no longer run automatically
+4. Visit https://rsquires1988.github.io - the site should render with full styling and correct content
 
 ## Technical Details
 - The workflow builds the site using `make publish` which uses `publishconf.py`
